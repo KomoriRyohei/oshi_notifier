@@ -1,4 +1,4 @@
-require_relative './searcher.rb'
+require_relative './env_getter.rb'
 
 class Messenger
   def initialize
@@ -24,5 +24,3 @@ class Messenger
     "【#{Time.now.strftime("%Y年%m月%d日#{wday_mapping[Time.now.wday]}")}曜日】"
   end
 end
-
-Searcher.new.get_latest_video_in_playlist.to_json

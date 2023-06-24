@@ -1,11 +1,11 @@
 require 'google/apis/youtube_v3'
 require 'date'
-require_relative './env_loader.rb'
+require_relative './env_getter.rb'
 
 class Searcher
   def initialize
     @client = Google::Apis::YoutubeV3::YouTubeService.new
-    @client.key = EnvLoader.new.parse_env_file['YOUTUBE_DATA_API_KEY']
+    @client.key = EnvGetter.new.get_parameter("/r_komori/youtube_data_api_key")
     @options = {
       channel_id: 'UCXRlIK3Cw_TJIQC5kSJJQMg',
       playlist_id: 'PLRGzS-dvI7ZzllJHCHsoEM8XJ9wvR955A'
