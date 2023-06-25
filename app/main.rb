@@ -2,7 +2,7 @@ require_relative './notifier.rb'
 require_relative './messenger.rb'
 require_relative './searcher.rb'
 
-def main
+def handler(event:, context:)
   messenger = Messenger.new
   notifier = Notifier.new
   options = {
@@ -14,5 +14,3 @@ def main
   notifier.notify(options)
   notifier.notify(options_playlist)
 end
-
-main
